@@ -1,0 +1,80 @@
+
+<div class="container">
+    
+    <h2><span><mat-icon>input</mat-icon></span>Fill Restaurant Details</h2>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <!-- <div class="form-group">
+            <label for="id">Rest Id</label>
+            <input formControlName="restName" id="restName" type="text" class="form-control" [(ngModel)]="rest.id">
+        </div> -->
+        <div class="form-group">
+            <label for="restName">Restaurant Name</label>
+            <input formControlName="restName" id="restName" type="text" class="form-control" pattern="[A-Za-z0-9]+"
+                [(ngModel)]="rest.restName" maxlength="63">
+
+            <div *ngIf="f.restName.touched && f.restName.invalid" class="alert alert-danger">
+                Special character not allowed
+                <div *ngIf="f.submitted && f.restName.errors?.required" class="invalid-feedback"></div>
+                <div *ngIf="f.restName.errors?.required">Restaurant Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="addr">Address</label>
+            <input formControlName="addr" id="addr" type="text" class="form-control" [(ngModel)]="rest.addr">
+            <div *ngIf="f.addr.touched && f.addr.invalid" class="alert alert-danger">
+                <div *ngIf="f.addr && f.addr.errors?.required" class="invalid-feedback"></div>
+                <div *ngIf="f.addr.errors?.required">Address required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input formControlName="mobileNumber" id="mobileNumber" type="text" class="form-control"
+                [(ngModel)]="rest.mobileNo" required pattern="[7-9]{1}[0-9]{9}">
+            <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class="alert alert-danger">
+                Mobile number start with 7,8 and 9
+                <div *ngIf="f.mobileNumber.errors?.required">Mobile Number is required.</div>
+                <div *ngIf="f.mobileNumber.errors?.pattern">Please, Enter 10 digit Mobile Number.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td> <label for="myTimePicker">Open Time</label>
+                        <input type="time" formControlName="myTimePicker" id="myTimePicker"
+                            [(ngModel)]="rest.myTimePicker">
+                    </td>
+
+
+                    <td> <label for="myTimePickerc">Close Time</label>
+                        <input type="time" formControlName="myTimePickerc" id="myTimePickerc"
+                            [(ngModel)]="rest.myTimePickerc">
+                    </td>
+                </tr>
+            </table>
+        </div>
+      
+     
+            <button class="btn btn-primary" type="submit">Submit</button>
+       
+    </form>
+   <!-- Adding image -->
+</div>
+<div class="container">
+  
+<form (ngSubmit)="uploadFile()"><table>
+    <tr>
+    <td><input
+      type="file"
+      (change)="onFileChangeEvent($event)"
+      multiple="false"
+      name="name"
+      style="width: 210px"
+      accept=".png,.jpg,.jpeg,.jfif"
+    /></td>
+    <td><button type="submit" class="btn btn-primary">Upload Image</button></td></tr></table>
+  </form>
+
+
+</div>

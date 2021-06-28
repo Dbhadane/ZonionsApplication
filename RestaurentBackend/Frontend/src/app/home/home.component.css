@@ -1,0 +1,45 @@
+
+  .center {
+    text-align: center;
+    /* border: 3px solid green; */
+  }
+  /* table{
+    font-style: oblique;
+    font-weight: normal;
+    padding-top: 70px;
+} */
+h2{
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+    font-size: 1cm;
+}
+table{
+  font-style: italic;
+  font-weight: normal;
+  padding-top: 70px;
+ 
+}
+input{
+  
+    color: #333;
+    background-color: white;
+    padding: 5px 10px;
+    margin: 10px;
+    display: inline-block;
+    -ms-transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    border: 2px solid #777;
+    width: 350px;
+    margin-right: 0px;
+    border-right: none;
+  
+}
+h2{
+  padding-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em
+}

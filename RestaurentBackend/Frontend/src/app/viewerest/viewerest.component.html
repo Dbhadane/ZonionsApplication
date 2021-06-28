@@ -1,0 +1,48 @@
+<div>
+    <input  type="search" placeholder="search here.." name="search" class="i1"
+     [(ngModel)]="searchTxt"  style=" margin-left: 70%; ">
+       
+    <h2> Restaurant List</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-primary">
+                <th>Id</th>
+                <th> Restaurant Name</th>
+                <th> Address </th>
+                <th> Mobile Number</th>
+                <th> Open Time </th>
+                <th>Close Time</th>
+                <th>Status</th>
+                <th>last Update</th>
+                <th> Actions </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let rest of rest | filter: searchTxt;  ">
+                <td>{{rest.id}}</td>
+                <td> {{ rest.restName }} </td>
+                <td> {{ rest.addr }} </td>
+                <td> {{ rest.mobileNo }} </td>
+                <td> {{ rest.myTimePicker}} </td>
+                <td> {{rest.myTimePickerc}}</td>
+                <td> {{rest.active == true ? 'Open' : 'Close'}} </td>
+                <td>{{rest.lastModify}}</td>
+
+                <td>
+
+                    <button (click)="updateRest(rest.id)" class="btn btn-success"> Update</button>
+                    <button (click)="deleteRest(rest.id)" class="btn btn-danger" style="margin-left: 10px">
+                        Delete</button>
+                    <button (click)="Onclick(rest.id)" class="btn btn-success" style="margin-left: 10px">Info</button>
+                    <button (click)="changeStatus(rest.id)" class="btn btn-success" style="margin-left: 10px">Change
+                        Status</button>
+
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+    
+</div>

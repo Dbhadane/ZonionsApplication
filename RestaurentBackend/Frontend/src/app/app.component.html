@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+   <span>
+      <mat-icon>eco</mat-icon>ZONIONS
+   </span>
+   
+   <a mat-button routerLink="home">Home</a>
+   <div *ngIf="!cobj.isUserLogin()">
+      <a mat-button routerLink='login'>Login</a>
+   </div>
+   <div *ngIf="cobj.isUserLogin()">
+   <a  mat-button routerLink='add' >Add Restaurant</a>
+   </div>
+   <div *ngIf="cobj.isUserLogin()">
+      <a  mat-button routerLink='view' >View Restaurant</a>
+      </div>
+   <a mat-button routerLink='Aboutus'>About Us</a>
+   <div class="spcer"></div>
+   <div *ngIf="cobj.isUserLogin()">
+      <span><mat-icon>account_circle</mat-icon>Dnyaneshwar</span>
+      <a button (click)="onLogout()" mat-button>Logout</a>
+      
+   </div>
+  
+</mat-toolbar>
+
+
+<!-- <div class="logo-image">
+       <img src="assets\image4.jpg" width="100%" 
+       height="50%" >
+    </div> -->
+<router-outlet></router-outlet>

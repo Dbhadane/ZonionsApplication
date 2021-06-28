@@ -1,0 +1,37 @@
+<div class="center">
+    <input class="form-control" type="search" placeholder="search here.." name="search" [(ngModel)]="searchTxt">
+<h2> Restaurant List</h2>
+</div >
+<table  class = "table table-bordered">
+         
+        <!-- <tr class="table-primary" style="font-size: 0.4cm;"> -->
+            <tr>
+            <th>Id</th>
+            <th> Restaurant Name</th>
+            <th> Address </th>
+            <th> Mobile Number</th>
+            <th> Open Time  </th>
+            <th>Close Time</th>
+            <th>Status</th>
+            <th>Last Modified</th>
+            <th>Action</th>
+           
+           
+        </tr>
+    
+    <tbody *ngFor = "let rest of rest | filter: searchTxt;" style="font-size: 0.3cm; font-weight: bold; ">
+        <tr  *ngIf ="rest.active">
+            <td>{{rest.id}}</td>
+            <td> {{ rest.restName }} </td>
+            <td> {{ rest.addr }} </td>
+            <td> {{ rest.mobileNo }} </td>
+            <td> {{ rest.myTimePicker}} </td>
+            <td> {{rest.myTimePickerc}}</td>
+            <td>{{rest.active == true ? 'Open' : 'Close' }}</td>
+            <td>{{ rest.lastModify }}</td>
+            <button (click) ="Onclick(rest.id)"  style="margin-left: 10px">Details</button>
+              
+            
+        </tr>
+    </tbody>
+</table>

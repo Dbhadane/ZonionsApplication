@@ -1,0 +1,34 @@
+
+<div class="table-users">
+    <div class="header">Restaurant Details</div>
+    
+    <table class="container">
+       <tr>
+          <th>Id</th>
+          <th>Restaurant Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Open Time</th>
+          <th>Close Time</th>
+          <th>Last Update</th>
+          <th>Status</th>
+      
+         
+       <tr width="230">
+      
+          <td>{{rest.id}}</td>
+          <td>{{rest.restName}}</td>
+          <td>{{rest.addr}}</td>
+          <td>{{rest.mobileNo}}</td>
+          <td>{{rest.myTimePicker}}</td>
+          <td>{{rest.myTimePickerc}}</td>
+          <td>{{rest.lastModify}}</td>
+          <td>{{rest.active == true ? 'Open' : 'Close'}}</td>
+       </tr>
+ 
+       <tr aria-rowspan="7"><td colspan="7"><img [src]="url" style="height: 200px; width: 200px;"/></td>
+      <td><button class="btn- primary" (click)="back()">Back</button></td>
+      </tr>
+     
+    </table>
+ </div>
